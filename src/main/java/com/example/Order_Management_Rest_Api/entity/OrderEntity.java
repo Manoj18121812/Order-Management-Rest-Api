@@ -1,5 +1,7 @@
 package com.example.Order_Management_Rest_Api.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,5 +22,6 @@ public class OrderEntity {
 
     @ManyToOne
     @JoinColumn(name="customer_id")
+    @JsonBackReference
     private Customer customer;
 }
